@@ -14,10 +14,23 @@ output log as well as the artifacts. See #3 for more information.*
 - [`python-dateutil`] - A robust ISO-8601 timestamp parser, among other things
 - [`pytz`] - Timezone info *(Only required if you are using Python 2)*
 
+Run `pip install -r requirements.txt` to install requirements locally.
+
 ## Usage
 This script leverages the [`python-gitlab` config file][python-gitlab-config].
 Just like the `gitlab` CLI tool, you can specify a non-default Gitlab server
-with the `-g`/`--gitlab` option.
+with the `-g`/`--gitlab` option. Mind that you have to set `api_version = 4`
+for this tool to work.
+
+Example `~/.python-gitlab.cfg` configuration:
+
+```ini
+[global]
+ssl_verify = true
+url = https://gitlab.some.whe.re
+private_token = vTbFeqJYCY3sibBP7BZM
+api_version = 4
+```
 
 You can specify any number of projects with the `-p`/`--project` option:
 
