@@ -42,6 +42,17 @@ Or, you can cleanup all projects visible to you:
 
 Builds for tags are never removed.
 
+### Usage via docker
+
+You can run the tool via docker:
+
+    $ docker run --rm \
+        -e URL=https://gitlab.myco.com \
+        -e PRIVATE_TOKEN=vTbFeqJYCY3sibBP7BZM \
+        cakuki/gitlab-artifact-cleanup \
+            --project jreinhart/artifact-test \
+            --project jreinhart/python-gitlab
+
 ## License
 
 This software is released under the [MIT License](https://opensource.org/licenses/MIT).
